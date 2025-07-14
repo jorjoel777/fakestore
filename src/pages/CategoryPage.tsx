@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { Button } from "../components/ui/Button";
 import { addToCart } from "../lib/cartHelpers";
 
-
 interface Product {
   id: number;
   title: string;
@@ -15,11 +14,11 @@ interface Product {
   stock: number;
   rating: number;
 }
+
 const CategoryPage = ({ refreshCart }: { refreshCart: () => void }) => {
   const { categoryName } = useParams<{ categoryName: string }>();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -40,9 +39,9 @@ const CategoryPage = ({ refreshCart }: { refreshCart: () => void }) => {
 
   const handleAddToCart = async (productId: number) => {
     await addToCart(productId);
-    setRefreshCartKey((prev) => prev + 1);
     refreshCart();
   };
+
   if (loading) return <div className="text-center py-10">Cargando...</div>;
 
   const slugify = (str: string) =>
@@ -76,8 +75,6 @@ const CategoryPage = ({ refreshCart }: { refreshCart: () => void }) => {
           </div>
         )}
       </main>
-
-
     </div>
   );
 };
