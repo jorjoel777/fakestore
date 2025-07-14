@@ -18,11 +18,7 @@ export default function ProductListAdmin() {
       .catch((err) => console.error("Error loading products:", err));
   }, []);
 
-  const handleRemove = (id: number) => {
-    // Just a visual simulation
-    setProducts(products.filter((product) => product.id !== id));
-    alert(`Product with ID ${id} would be deleted here.`);
-  };
+
 
   return (
     <div className="p-6">
