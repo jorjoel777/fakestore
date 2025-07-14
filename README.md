@@ -21,12 +21,19 @@
 
 src/
 ├── assets/ → Static assets (e.g., logo)
+
 ├── components/ → Shared UI components (CartSidebar, Button, etc.)
+
 ├── lib/ → Utility functions (cartHelpers)
+
 ├── pages/ → App pages (ProductList, CategoryPage, etc.)
+
 │ └── admin/ → Admin dashboard views
+
 ├── App.tsx → Main app with routes
+
 ├── index.css → Base styles
+
 └── main.tsx → Entry point
 
 yaml
