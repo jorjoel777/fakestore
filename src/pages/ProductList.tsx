@@ -3,14 +3,9 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
-import CartSidebar from "../components/CartSidebar";
-import { Button } from "@/components/ui/button";
-import { addToCart, getCartItems } from "@/lib/cartHelpers";
+import { Button } from "../components/ui/Button";
+import { addToCart, getCartItems } from "../lib/cartHelpers";en 
 
-interface ProductListProps {
-  refreshCart: () => void;
-  updateCartCount: (count: number) => void;
-}
 
 interface Product {
   id: number;
@@ -40,8 +35,6 @@ const ProductList = ({
   const [sortBy, setSortBy] = useState<string>("asc");
   const [currentPage, setCurrentPage] = useState(1);
   const [categories, setCategories] = useState<string[]>([]);
-  const [showCart, setShowCart] = useState(true);
-  const [refreshCartKey, setRefreshCartKey] = useState(0);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/categories")
@@ -66,7 +59,7 @@ const ProductList = ({
       const items = getCartItems(); // obtiene desde localStorage
       updateCartCount(items.length);
       refreshCart?.(); // <-- esto hace el trigger al CartSidebar
-      setRefreshCartKey((prev) => prev + 1); // en caso lo estés usando dentro del componente
+   
     };
 
 
