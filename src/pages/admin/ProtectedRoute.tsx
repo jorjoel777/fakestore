@@ -1,10 +1,8 @@
-// src/components/ProtectedRoute.tsx
-import React from "react"; // 👈 necesario para usar JSX.Element
 import { Navigate } from "react-router-dom";
-
+import type { ReactNode } from "react";
 
 type Props = {
-  children: JSX.Element;
+  children: ReactNode;
   adminOnly?: boolean;
 };
 
@@ -20,5 +18,5 @@ export default function ProtectedRoute({ children, adminOnly = false }: Props) {
     return <Navigate to="/" />;
   }
 
-  return children;
+  return <>{children}</>; // Wrap in fragment for ReactNode
 }
