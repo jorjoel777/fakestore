@@ -1,7 +1,7 @@
 // src/components/ProtectedRoute.tsx
-
 import React from "react"; // 👈 necesario para usar JSX.Element
 import { Navigate } from "react-router-dom";
+
 
 type Props = {
   children: JSX.Element;
