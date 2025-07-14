@@ -10,9 +10,10 @@ interface Props {
 }
 interface CartSidebarProps {
       onClose?: () => void; 
+      refreshSignal: number;
+      updateCartCount: (count: number) => void;
 }
-
-export default function CartSidebar({ refreshSignal, onClose }: Props & CartSidebarProps) {
+export default function CartSidebar({ refreshSignal, onClose, updateCartCount }: Props & CartSidebarProps)
 
   const [cartItems, setCartItems] = useState<{ productId: number; quantity: number }[]>([]);
   const [subtotal, setSubtotal] = useState(0);
