@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getLocalUsers } from "../services/authService";
 
 export default function LoginPage() {
   const [form, setForm] = useState({ username: "", password: "" });
@@ -10,35 +9,15 @@ export default function LoginPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-type Props = {
-  onLoginSuccess: () => void;
-};
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    let user =
-      users.find(
-        (u) => u.username === form.username && u.password === form.password
-      ) || null;
-
-    if (!user) {
-      const localUsers = getLocalUsers();
-      user =
-        localUsers.find(
-          (u) => u.username === form.username && u.password === form.password
-        ) || null;
-    }
-
-    if (!user) {
-      setError("Invalid credentials");
-      return;
-    }
 
     try {
       const res = await fetch("https://fakestoreapi.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: "mor_2314", password: "83r5^_" }), // credenciales válidas para bypass
+        body: JSON.stringify({ username: "mor_2314", password: "83r5^_" }),
       });
 
       const data = await res.json();
@@ -48,10 +27,17 @@ type Props = {
         return;
       }
 
+      // Simulamos usuario hardcodeado
+      const user = {
+        id: 1,
+        username: "mor_2314",
+        isAdmin: true,
+      };
+
       localStorage.setItem("token", data.token);
       localStorage.setItem("userId", user.id.toString());
       localStorage.setItem("username", user.username);
-      localStorage.setItem("isAdmin", user.isAdmin?.toString() || "false");
+      localStorage.setItem("isAdmin", user.isAdmin.toString());
 
       window.dispatchEvent(new Event("loginSuccess"));
 
@@ -93,7 +79,8 @@ type Props = {
           Login
         </button>
       </form>
-      <p className="mt-10">username: <b>mor_2314</b> </p>
+
+      <p className="mt-10">username: <b>mor_2314</b></p>
       <p>password: <b>1234</b></p>
     </div>
   );
