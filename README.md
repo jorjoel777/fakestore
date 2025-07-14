@@ -20,6 +20,7 @@
 ## 📂 Project Structure
 
 src/
+
 ├── assets/ → Static assets (e.g., logo)
 
 ├── components/ → Shared UI components (CartSidebar, Button, etc.)
