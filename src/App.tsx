@@ -132,7 +132,7 @@ function App() {
 
         {isCartOpen && (
           <CartSidebar
-            key={cartRefresh.toString()}
+            key={+cartRefresh}
             onClose={toggleCart}
             updateCartCount={setCartCount}
             refreshSignal={cartRefresh}
@@ -151,4 +151,3 @@ function App() {
 }
 
 export default App;
-export default ProtectedRoute;

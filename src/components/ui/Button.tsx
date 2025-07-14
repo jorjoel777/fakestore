@@ -1,5 +1,5 @@
 // src/components/ui/button.tsx
-import { ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {

@@ -4,7 +4,6 @@ import {
   getCart,
   removeFromCart,
   updateCartQuantity,
-  calculateSubtotal,
 } from "../lib/cartHelpers";
 interface Props {
   refreshSignal: number;
