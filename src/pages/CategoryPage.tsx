@@ -20,22 +20,22 @@ const CategoryPage = ({ refreshCart }: { refreshCart: () => void }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        const enhanced = data.map((p: Product) => ({
-          ...p,
-          rating: Math.random() * 2 + 3,
-          stock: Math.floor(Math.random() * 20 + 5),
-        }));
-        const filtered = enhanced.filter(
-          (p) => p.category.toLowerCase() === categoryName?.toLowerCase()
-        );
-        setProducts(filtered);
-        setLoading(false);
-      });
-  }, [categoryName]);
+useEffect(() => {
+  fetch("https://fakestoreapi.com/products")
+    .then((res) => res.json())
+    .then((data: Product[]) => {
+      const enhanced = data.map((p) => ({
+        ...p,
+        rating: Math.random() * 2 + 3,
+        stock: Math.floor(Math.random() * 20 + 5),
+      }));
+      const filtered = enhanced.filter(
+        (p) => p.category.toLowerCase() === categoryName?.toLowerCase()
+      );
+      setProducts(filtered);
+      setLoading(false);
+    });
+}, [categoryName]);
 
   const handleAddToCart = async (productId: number) => {
     await addToCart(productId);
