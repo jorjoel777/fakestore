@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import usersData from "/src/data/users.json";
 
 interface User {
   id: number;
