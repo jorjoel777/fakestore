@@ -17,7 +17,7 @@ function App() {
   const [username, setUsername] = useState<string | null>(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  const [cartRefresh, setCartRefresh] = useState(false);
+  const [cartRefresh, setCartRefresh] = useState<boolean>(false);
   const triggerCartRefresh = () => setCartRefresh((prev) => !prev);
   const toggleCart = () => {
     setIsCartOpen((prev) => !prev);
