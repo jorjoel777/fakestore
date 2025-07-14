@@ -139,7 +139,7 @@ function App() {
 
         <footer className="mt-10 py-6 border-t text-center w-full bg-white">
           <div className="flex flex-col items-center justify-center space-y-2">
-            <img src={fakeLogo} alt="Logo" className="h-10 animate-spin-slow" />
+            <img src="./src/assets/fakelogo.svg" alt="Logo" className="h-10 animate-spin-slow" />
             <p className="text-sm text-gray-600">© 2025 | Created by Jorge Vega</p>
           </div>
         </footer>
