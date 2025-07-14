@@ -153,15 +153,14 @@ const ProductList = ({
                 <ProductCard {...product} />
               </Link>
 
-              <Button
-                onClick={() => {
-                  handleAddToCart(product.id);
-                  refreshCart(); // 👈 aquí fuerzas a refrescar el carrito visible
-                }}
-                className="mt-2 w-full bg-yellow-500 hover:bg-yellow-600 text-white"
-              >
-                Add to cart
-              </Button>
+
+                <Button
+                  onClick={() => handleAddToCart(product.id)}
+                  className="mt-2 w-full bg-yellow-500 hover:bg-yellow-600 text-white"
+                >
+                  Add to cart
+                </Button>
+
 
             </div>
           ))}

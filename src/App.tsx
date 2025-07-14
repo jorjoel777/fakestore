@@ -131,7 +131,7 @@ function App() {
 
         {isCartOpen && (
           <CartSidebar
-            key={+cartRefresh}
+            key={Number(cartRefresh)}
             onClose={toggleCart}
             updateCartCount={setCartCount}
             refreshSignal={cartRefresh}/>

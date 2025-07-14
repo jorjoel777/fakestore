@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
-import { Button } from "./components/ui/button";
+import { Button } from "../components/ui/Button";
 import { addToCart } from "../lib/cartHelpers";
 
 
@@ -19,7 +19,7 @@ const CategoryPage = ({ refreshCart }: { refreshCart: () => void }) => {
   const { categoryName } = useParams<{ categoryName: string }>();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const [refreshCartKey, setRefreshCartKey] = useState(0);
+
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -69,7 +69,7 @@ const CategoryPage = ({ refreshCart }: { refreshCart: () => void }) => {
                   onClick={() => handleAddToCart(product.id)}
                   className="mt-2 w-full bg-yellow-500 hover:bg-yellow-600 text-white"
                 >
-                  Añadir al carrito
+                  Add to cart
                 </Button>
               </div>
             ))}
