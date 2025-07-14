@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { addToCart } from "@/lib/cartHelpers";
-import CartSidebar from "@/components/CartSidebar";
+
 
 interface Product {
   id: number;

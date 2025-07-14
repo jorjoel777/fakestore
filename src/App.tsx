@@ -9,7 +9,6 @@ import LoginPage from "./pages/admin/LoginPage";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ProductListAdmin from "./pages/admin/ProductListAdmin";
 import UserListAdmin from "./pages/admin/UserListAdmin";
-import ProtectedRoute from "./pages/admin/ProtectedRoute";
 import CartSidebar from "./components/CartSidebar";
 
 import "./index.css";
@@ -135,8 +134,7 @@ function App() {
             key={+cartRefresh}
             onClose={toggleCart}
             updateCartCount={setCartCount}
-            refreshSignal={cartRefresh}
-          />
+            refreshSignal={cartRefresh}/>
         )}
 
         <footer className="mt-10 py-6 border-t text-center w-full bg-white">
