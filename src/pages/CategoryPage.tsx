@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
-import { Button } from "../components/ui/button";
+import { Button } from "./components/ui/button";
 import { addToCart } from "../lib/cartHelpers";
 
 
