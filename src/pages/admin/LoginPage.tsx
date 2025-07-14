@@ -31,7 +31,7 @@ export default function LoginPage() {
       const user = {
         id: 1,
         username: "mor_2314",
-        isAdmin: true,
+        isAdmin: false,
       };
 
       localStorage.setItem("token", data.token);
