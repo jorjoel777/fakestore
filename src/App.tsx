@@ -9,7 +9,7 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import ProductListAdmin from "./pages/admin/ProductListAdmin";
 import UserListAdmin from "./pages/admin/UserListAdmin";
 import CartSidebar from "./components/CartSidebar";
-import fakeLogo from "./assets/fakeLogopng.png";
+import fakeLogo from "./pages/fakelogo.svg";
 import "./index.css";
 
 function App() {
