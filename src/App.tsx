@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Navigate, Outlet } from "react-router-dom";
 import fakeLogo from "./assets/fakeLogo.svg";
 import { LogIn, ShoppingCart } from "lucide-react";
-
 import ProductList from "./pages/ProductList";
 import SingleProduct from "./pages/SingleProduct";
 import CategoryPage from "./pages/CategoryPage";
 import LoginPage from "./pages/admin/LoginPage";
-import RegisterPage from "./pages/admin/RegisterPage";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ProductListAdmin from "./pages/admin/ProductListAdmin";
 import UserListAdmin from "./pages/admin/UserListAdmin";
@@ -21,11 +19,14 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const [cartRefresh, setCartRefresh] = useState(false);
-
   const triggerCartRefresh = () => setCartRefresh((prev) => !prev);
   const toggleCart = () => {
     setIsCartOpen((prev) => !prev);
     setCartRefresh((prev) => !prev); // refresh on open
+  };
+  const ProtectedRoute = () => {
+    const token = localStorage.getItem("token");
+    return token ? <Outlet /> : <Navigate to="/admin/login" replace />;
   };
 
   useEffect(() => {
@@ -122,7 +123,6 @@ function App() {
             path="/admin/login"
             element={<LoginPage />}
           />
-          <Route path="/admin/register" element={<RegisterPage />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/admin/adminDashboard" element={<AdminDashboard />} />
             <Route path="/admin/products" element={<ProductListAdmin />} />
@@ -151,3 +151,4 @@ function App() {
 }
 
 export default App;
+export default ProtectedRoute;
