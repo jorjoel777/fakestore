@@ -55,7 +55,7 @@ function App() {
         <div className="maintop justify-between items-center px-6 py-4 bg-white shadow-md w-full max-w-9/10 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div className="flex items-center space-x-4">
             <a href="/" rel="noopener noreferrer">
-            <img src="./src/assets/fakelogo.svg"  className="h-16 w-auto animate-spin-slow" alt="FakeStore logo" />
+            <img src="./src/assets/fakelogopng.png"  className="h-16 w-auto animate-spin-slow" alt="FakeStore logo" />
 
             </a>
           </div>
@@ -139,7 +139,7 @@ function App() {
 
         <footer className="mt-10 py-6 border-t text-center w-full bg-white">
           <div className="flex flex-col items-center justify-center space-y-2">
-            <img src="./src/assets/fakelogo.svg" alt="Logo" className="h-10 animate-spin-slow" />
+            <img src="./src/assets/fakelogopng.png" alt="Logo" className="h-10 animate-spin-slow" />
             <p className="text-sm text-gray-600">© 2025 | Created by Jorge Vega</p>
           </div>
         </footer>
