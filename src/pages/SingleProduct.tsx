@@ -1,9 +1,8 @@
 // src/pages/SingleProduct.tsx
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { addToCart } from "@/lib/cartHelpers";
-import CartSidebar from "@/components/CartSidebar";
+import { Button } from "../components/ui/Button";
+import { addToCart } from "../lib/cartHelpers";
 
 interface Product {
   id: number;
