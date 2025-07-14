@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Link, Navigate, Outlet } from "react-router-dom";
-import fakeLogo from "./assets/fakeLogo.svg";
 import { LogIn, ShoppingCart } from "lucide-react";
 import ProductList from "./pages/ProductList";
 import SingleProduct from "./pages/SingleProduct";
@@ -56,7 +55,8 @@ function App() {
         <div className="maintop justify-between items-center px-6 py-4 bg-white shadow-md w-full max-w-9/10 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div className="flex items-center space-x-4">
             <a href="/" rel="noopener noreferrer">
-              <img src={fakeLogo} className="h-16 w-auto animate-spin-slow" alt="FakeStore logo" />
+            <img src="./src/assets/fakelogo.svg"  className="h-16 w-auto animate-spin-slow" alt="FakeStore logo" />
+
             </a>
           </div>
 
