@@ -6,7 +6,7 @@ import {
   updateCartQuantity,
 } from "../lib/cartHelpers";
 interface Props {
-  refreshSignal: boolean; // it was number before
+  refreshSignal: number;
 }
 interface CartSidebarProps {
       onClose?: () => void; 

@@ -17,11 +17,11 @@ function App() {
   const [username, setUsername] = useState<string | null>(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  const [cartRefresh, setCartRefresh] = useState<boolean>(false);
-  const triggerCartRefresh = () => setCartRefresh((prev) => !prev);
+  const [cartRefresh, setCartRefresh] = useState<number>(0);
+  const triggerCartRefresh = () => setCartRefresh(prev => prev + 1);
   const toggleCart = () => {
-    setIsCartOpen((prev) => !prev);
-    setCartRefresh((prev) => !prev); // refresh on open
+    setIsCartOpen(prev => !prev);
+    setCartRefresh(prev => prev + 1); // suma 1 en lugar de hacer toggle
   };
   const ProtectedRoute = () => {
     const token = localStorage.getItem("token");
