@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
 import { Button } from "../components/ui/Button";
-import { addToCart, getCartItems } from "../lib/cartHelpers";en 
+import { addToCart, getCartItems } from "../lib/cartHelpers";
 
 
 interface Product {
