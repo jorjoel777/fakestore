@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import users from "/src/data/users.json"; // Asegúrate de que apunta correctamente
-import { getLocalUsers } from "@/services/authService";
+import { useNavigate } from "react-router-dom";
+import { getLocalUsers } from "../services/authService";
 
 export default function LoginPage() {
   const [form, setForm] = useState({ username: "", password: "" });
