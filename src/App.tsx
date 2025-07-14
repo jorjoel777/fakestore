@@ -61,7 +61,7 @@ function App() {
           </div>
 
           <nav className="flex items-center space-x-1 justify-between gap-2">
-            <ul className="flex space-x-2 text-sm font-medium text-gray-700">
+            <ul className="hidden md:flex space-x-2 text-sm font-medium text-gray-700">
               <li><Link to="/category/men's clothing">Men</Link></li>
               <li><Link to="/category/women's clothing">Women</Link></li>
               <li><Link to="/category/jewelery">Jewelery</Link></li>

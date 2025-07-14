@@ -50,7 +50,7 @@ useEffect(() => {
   return (
     <div className="flex">
       <main className="max-w-6xl mx-auto px-4 py-8 flex-1">
-        <h2 className="text-2xl font-bold mb-6 capitalize">Categoría: {categoryName}</h2>
+        <h2 className="text-2xl font-bold mb-6 capitalize">Category: {categoryName}</h2>
         {products.length === 0 ? (
           <p>No hay productos en esta categoría.</p>
         ) : (
