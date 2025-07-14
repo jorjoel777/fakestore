@@ -1,69 +1,115 @@
-# React + TypeScript + Vite
+# 🛒 FakeStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**FakeStore** is a fully functional e-commerce frontend built with React + Vite, featuring category-based browsing, cart management with persistence, admin login, and a protected admin dashboard. It leverages the public [FakeStoreAPI](https://fakestoreapi.com/).
 
-Currently, two official plugins are available:
+🔗 Live Demo: [https://fakestore-seven.vercel.app](https://fakestore-seven.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ React + Vite
+- 📦 TypeScript
+- 📁 React Router DOM v6+
+- 🛒 FakeStore API (External)
+- 🧠 LocalStorage for cart/session
+- 🧪 TailwindCSS (utility-based styling)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📂 Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+src/
+├── assets/ → Static assets (e.g., logo)
+├── components/ → Shared UI components (CartSidebar, Button, etc.)
+├── lib/ → Utility functions (cartHelpers)
+├── pages/ → App pages (ProductList, CategoryPage, etc.)
+│ └── admin/ → Admin dashboard views
+├── App.tsx → Main app with routes
+├── index.css → Base styles
+└── main.tsx → Entry point
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+yaml
+Copiar
+Editar
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🔐 Admin Access
+
+Authentication uses FakeStoreAPI credentials:
+
+```bash
+Username: mor_2314
+Password: 1234
+🔒 Once logged in, the token is stored in localStorage and grants access to:
+
+/admin/adminDashboard
+
+/admin/products
+
+/admin/users
+
+🧪 Features
+✅ Public:
+View products by category
+
+Detailed product pages
+
+Add to cart (with persistence)
+
+Interactive cart sidebar
+
+✅ Admin:
+Real API login
+
+Protected routes
+
+Admin dashboard (mock)
+
+Product and user lists
+
+⚙️ Getting Started
+bash
+Copiar
+Editar
+# 1. Clone the repository
+git clone https://github.com/jorjoel777/fakestore
+cd fakestore
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the development server
+npm run dev
+Visit http://localhost:5173 in your browser.
+
+📦 Build & Deploy
+To generate the production build:
+
+bash
+Copiar
+Editar
+npm run build
+To preview the build locally:
+
+bash
+Copiar
+Editar
+npm run preview
+Deployed with Vercel.
+
+🧠 Technical Notes
+Route protection is handled by a custom ProtectedRoute wrapper.
+
+CartSidebar refreshes on demand via a numeric signal.
+
+Cart state persists using localStorage with custom helpers (addToCart, removeFromCart, etc.).
+
+Products are enhanced client-side with fake stock and rating values.
+
+Login logic integrates directly with FakeStoreAPI using hardcoded valid credentials.
+
+🙌 Credits
+Created by Jorge Vega as a front-end integration exercise.
+
