@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 
 interface User {
   id: number;
@@ -13,8 +13,12 @@ export default function UserListAdmin() {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    // Load users from static JSON (local users.json)
-    setUsers(usersData);
+    // Simulación de usuarios si ya no usas usersData externo
+    const dummyUsers: User[] = [
+      { id: 1, username: "admin", password: "1234", isAdmin: true },
+      { id: 2, username: "user", password: "abcd", isAdmin: false },
+    ];
+    setUsers(dummyUsers);
   }, []);
 
   return (
