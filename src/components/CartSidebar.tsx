@@ -13,7 +13,8 @@ interface CartSidebarProps {
       refreshSignal: number;
       updateCartCount: (count: number) => void;
 }
-export default function CartSidebar({ refreshSignal, onClose, updateCartCount }: Props & CartSidebarProps)
+
+export default function CartSidebar({ refreshSignal, onClose, updateCartCount }: Props & CartSidebarProps) {
 
   const [cartItems, setCartItems] = useState<{ productId: number; quantity: number }[]>([]);
   const [subtotal, setSubtotal] = useState(0);
