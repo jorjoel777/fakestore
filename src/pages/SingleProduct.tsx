@@ -17,7 +17,6 @@ interface Product {
 const SingleProduct = ({ refreshCart }: { refreshCart: () => void }) => {
   const { slug } = useParams<{ slug: string }>();
   const [product, setProduct] = useState<Product | null>(null);
-  const [refreshCartKey, setRefreshCartKey] = useState(0);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -31,8 +30,7 @@ const SingleProduct = ({ refreshCart }: { refreshCart: () => void }) => {
 
         const slugify = (str: string) =>
           str.toLowerCase().replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "-");
-
-        const found = enhanced.find((p) => slugify(p.title) === slug);
+        const found = enhanced.find((p: Product) => slugify(p.title) === slug);
         setProduct(found || null);
       });
   }, [slug]);
@@ -42,7 +40,6 @@ const SingleProduct = ({ refreshCart }: { refreshCart: () => void }) => {
       if (!product) return;
       await addToCart(product.id);
       refreshCart(); // aquí llamamos al refresh real del App
-      setRefreshCartKey((prev) => prev + 1);
     };
   if (!product)
     return <div className="text-center min-h-screen py-10 text-red-500">Producto no encontrado</div>;
