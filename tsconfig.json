@@ -4,4 +4,12 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ]
+  {
+    "compilerOptions": {
+      "types": ["node"],
+      "module": "ESNext",
+      "moduleResolution": "Node",
+      "target": "ESNext"
+    }
+  }
 }
