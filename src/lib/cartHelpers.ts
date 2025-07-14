@@ -67,3 +67,6 @@ export function clearCart() {
   const cartKey = getCurrentCartKey();
   localStorage.removeItem(cartKey);
 }
+export function calculateSubtotal(items: { quantity: number; price: number }[]): number {
+  return items.reduce((sum, item) => sum + item.quantity * item.price, 0);
+}

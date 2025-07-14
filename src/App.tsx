@@ -26,7 +26,7 @@ function App() {
   const triggerCartRefresh = () => {
     setCartRefresh(prev => !prev);
   };
-
+  const refreshCart = () => setCartRefresh(prev => !prev);
   const toggleCart = () => {
     setIsCartOpen((prev) => !prev);
     setCartRefresh(prev => !prev); // ensure refresh when opening
@@ -153,6 +153,12 @@ function App() {
             path="/category/:categoryName"
             element={<CategoryPage refreshCart={() => setCartRefresh(prev => !prev)} />}
           />
+          <Route path="/cart" element={<CartSidebar refreshCart={refreshCart} />} />
+          <Route
+            path="/category/:categoryName"
+            element={<CategoryPage refreshCart={refreshCart} />}
+          />
+
           </Route>
         </Routes>
       </div>

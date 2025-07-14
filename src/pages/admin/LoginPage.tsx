@@ -11,7 +11,9 @@ export default function LoginPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
+type Props = {
+  onLoginSuccess: () => void;
+};
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
