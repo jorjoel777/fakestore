@@ -1,0 +1,32 @@
+[
+  {
+    "id": 2,
+    "username": "mor_2314",
+    "email": "test@mail.com",
+    "password": "1234",
+    "isAdmin": false
+  },
+  {
+    "id": 0,
+    "username": "admin",
+    "email": "admin@mail.com",
+    "password": "admin123",
+    "isAdmin": true
+  },
+  {
+    "id": 3,
+    "username": "GeorgeE",
+    "email": "jorgevegb@outlook.com",
+    "password": "Gwen4ever!",
+    "isAdmin": true
+  },
+  {
+    "id": 4,
+    "username": "jorgeV",
+    "email": "jorbre@gmail.com",
+    "password": "Gwen12345!",
+    "isAdmin": false
+  }
+
+
+]
